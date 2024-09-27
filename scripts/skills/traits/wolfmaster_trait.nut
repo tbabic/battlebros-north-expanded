@@ -93,6 +93,7 @@ this.wolfmaster_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			return false;
 		}
 		local ally = accessory.m.Entity;
+		if (ally.m.IsDying || !ally.m.IsAlive) return false;
 		
 		local myTile = actor.getTile();
 		local allyDistance = ally.getTile().getDistanceTo(myTile);
